@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md. Rakib Mahmud Hridoy — Mobile Engineer</title>
+<meta name="description" content="Mobile engineer in Dhaka with 5+ years in Kotlin, Jetpack Compose and Flutter. I build real-time communication systems: SIP telephony, self-hosted video conferencing, and clinical device data.">
+<meta property="og:title" content="Md. Rakib Mahmud Hridoy — Mobile Engineer">
+<meta property="og:description" content="Android and Flutter engineer specialising in real-time communication systems.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#080C12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F2EE" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script>
+  // Runs before first paint so content never flashes before the boot sequence.
+  (function(){
+    try{
+      if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.className += ' booting js-reveal';
+      }
+    }catch(e){}
+
+    // Resolve the theme before first paint so there's no flash of the wrong
+    // colours. Stored choice wins; otherwise follow the operating system.
+    try{
+      var saved = window.localStorage.getItem('theme');
+      var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      document.documentElement.setAttribute(
+        'data-theme',
+        saved === 'light' || saved === 'dark' ? saved : (prefersLight ? 'light' : 'dark')
+      );
+    }catch(e){
+      document.documentElement.setAttribute('data-theme','dark');
+    }
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100..900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
