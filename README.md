@@ -39,7 +39,7 @@ needs no account or server:
 3. Paste it into `contact.accessKey` in `src/data/content.js`.
 
 Signup asks for a website URL. Give the address the site will live at —
-`https://rakibhridoy206.github.io` — even though it isn't up yet. Nothing
+`https://hridoyrakibmahmud.github.io` — even though it isn't up yet. Nothing
 validates it at signup.
 
 That's the entire setup. Submissions arrive in your inbox.
@@ -75,7 +75,7 @@ in `src/components/ContactForm.jsx`. Formspree, for instance, wants no
 ### Turning the GitHub link on
 
 In `src/data/content.js`, `profile.github` is `null`, which hides the button.
-Set it to `'https://github.com/rakibHridoy206'` to show it.
+Set it to `'https://github.com/hridoyRakibMahmud'` to show it.
 
 Worth doing once the profile has a README describing what you build, one pinned
 repo in Kotlin/Compose or Flutter written recently, and the older coursework
@@ -88,14 +88,14 @@ a real build and a CI deploy is current, public work.
 
 ### 1. Create the repo
 
-Name it **`rakibHridoy206.github.io`** — matching your username exactly. That
+Name it **`hridoyRakibMahmud.github.io`** — matching your username exactly. That
 makes it a *user site*, served from the root of the domain, which is why
 `vite.config.js` has `base: '/'`.
 
 It must be **public**. GitHub Pages only serves from public repos on the free
 plan.
 
-> Deploying to a project repo instead (e.g. `github.com/rakibHridoy206/portfolio`)?
+> Deploying to a project repo instead (e.g. `github.com/hridoyRakibMahmud/portfolio`)?
 > Then the site lives at a subpath, and you must change `base` in
 > `vite.config.js` to `'/portfolio/'`. Getting this wrong is the single most
 > common cause of a blank page with 404s on the CSS and JS — the app builds
@@ -108,7 +108,7 @@ git init
 git add .
 git commit -m "Portfolio site"
 git branch -M main
-git remote add origin https://github.com/rakibHridoy206/rakibHridoy206.github.io.git
+git remote add origin https://github.com/hridoyRakibMahmud/hridoyRakibMahmud.github.io.git
 git push -u origin main
 ```
 
@@ -128,7 +128,7 @@ Do this *before* worrying about the first workflow run. If Source is left on
 installs, builds, and publishes `dist/`. Check the **Actions** tab — the first
 run takes about a minute.
 
-Live at `https://rakibHridoy206.github.io`.
+Live at `https://hridoyRakibMahmud.github.io`.
 
 ### 5. From then on
 
@@ -141,7 +141,7 @@ rebuilds itself.
 
 Buy from Namecheap, Porkbun or Cloudflare Registrar (~$10–15/year). Then
 **Settings → Pages → Custom domain**, and at your registrar add a `CNAME`
-record pointing to `rakibHridoy206.github.io`.
+record pointing to `hridoyRakibMahmud.github.io`.
 
 Not required. A `github.io` URL on a developer's résumé is completely normal.
 

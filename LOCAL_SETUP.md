@@ -127,8 +127,8 @@ it's running.
 
 **Blank page in preview, with 404s on the CSS and JS in the console.**
 The `base` in `vite.config.js` doesn't match where the site is being served from.
-For a repo named `rakibHridoy206.github.io` it must be `'/'`. For a project repo
-like `github.com/rakibHridoy206/portfolio` it must be `'/portfolio/'`. This is the
+For a repo named `hridoyRakibMahmud.github.io` it must be `'/'`. For a project repo
+like `github.com/hridoyRakibMahmud/portfolio` it must be `'/portfolio/'`. This is the
 single most common GitHub Pages failure.
 
 **Headings in the wrong font.** Check the Network tab, filter to "font". Two

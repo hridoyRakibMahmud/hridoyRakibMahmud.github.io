@@ -13,7 +13,7 @@ export const profile = {
   // Set to a URL string to show the GitHub button. Leave null to hide it.
   // Turn it on once the profile has a README and a current Kotlin/Compose or
   // Flutter repo pinned — see README.md.
-  github: 'https://github.com/rakibHridoy206',
+  github: 'https://github.com/hridoyRakibMahmud',
 };
 
 // Contact form backend. Free tier: 250 submissions/month, no dashboard needed.
