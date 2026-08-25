@@ -27,7 +27,7 @@ export default function App() {
             <p className="status"><span className="dot" />{profile.status}</p>
             <div className="actions">
               <a className="btn btn--go" href="#work">See the work</a>
-              <a className="btn" href={profile.resume} download>Download résumé</a>
+              <a className="btn" href={profile.resume} download>Download resume</a>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function App() {
             {profile.github && (
               <a className="btn" href={profile.github} target="_blank" rel="noopener">GitHub</a>
             )}
-            <a className="btn" href={profile.resume} download>Résumé (PDF)</a>
+            <a className="btn" href={profile.resume} download>Resume (PDF)</a>
           </div>
         </div>
       </section>
