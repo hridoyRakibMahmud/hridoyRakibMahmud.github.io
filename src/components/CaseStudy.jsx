@@ -1,7 +1,7 @@
 import Icon from './Icon.jsx';
 
 export default function CaseStudy({ project }) {
-  const { title, tag, stack, blocks, scope, icon } = project;
+  const { title, tag, stack, blocks, scope, icon, repoUrl } = project;
 
   return (
     <article className="case">
@@ -37,6 +37,11 @@ export default function CaseStudy({ project }) {
         ))}
 
         {scope && <p className="scope">{scope}</p>}
+        {repoUrl && (
+          <a className="case__repo" href={repoUrl} target="_blank" rel="noopener">
+            View source on GitHub &#8594;
+          </a>
+        )}
       </div>
     </article>
   );

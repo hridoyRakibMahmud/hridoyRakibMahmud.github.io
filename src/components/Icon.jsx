@@ -61,6 +61,16 @@ const scenes = {
     </>
   ),
 
+  // A country map drilling down into a region, with a point marker settling.
+  drilldown: (
+    <>
+      <path d="M8 8l12-3 12 4-3 13-12 3-12-4Z" />
+      <path d="M20 5v20" opacity="0.5" />
+      <path d="M8 8l7 4M32 9l-7 3" opacity="0.5" />
+      <circle className="ic-pin" cx="17" cy="16" r="3.2" />
+    </>
+  ),
+
   // A vitals trace being written across the monitor.
   vitals: (
     <>

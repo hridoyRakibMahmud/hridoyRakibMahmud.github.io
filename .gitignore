@@ -3,3 +3,5 @@ dist
 .DS_Store
 *.local
 DEPLOY_GITHUB_PAGES.md
+CLAUDE_CODE_WORKFLOW.md
+SYNC_WORKFLOW.md

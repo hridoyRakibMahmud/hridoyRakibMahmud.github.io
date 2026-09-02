@@ -80,6 +80,33 @@ export const projects = [
     scope: "Built by a team of three. My scope was the attendance, leave and HR workflow modules — the calling, chat and location-tracking subsystems were my teammates'.",
   },
   {
+    title: 'Drill-down region map package',
+    tag: 'Open source · Flutter package',
+    repoUrl: 'https://github.com/hridoyRakibMahmud/geo_drilldown',
+    icon: 'drilldown',
+    stack: ['Flutter · Dart', 'CustomPainter, zero dependencies', 'GeoJSON'],
+    blocks: [
+      {
+        label: 'Overview',
+        items: [
+          "A standalone Flutter package for an interactive region map: tap a division to zoom in and reveal its districts, tap a district to reveal points inside it — built generic against any GeoJSON rather than hardcoded to one country.",
+          'Renders as flat, stylised shapes via CustomPainter — no tile server, no API key, no map SDK, and it works unchanged on mobile and web.',
+          "Ships with real Bangladesh boundary data (UN OCHA's humanitarian boundary dataset), simplified from over 200,000 polygon vertices down to about 7,000 with mapshaper so the shapes redraw smoothly during the zoom animation.",
+        ],
+      },
+      {
+        label: 'Built with AI-assisted development',
+        text: "I directed an AI coding tool through the implementation, reviewing and testing every part rather than writing it line by line. The design calls were mine: computing each region's label anchor as the point deepest inside its shape rather than a bounding-box centre, which matters once real coastlines and offshore islands are involved; catching that hashing region ids into a fixed color palette collides once you have more regions than colors, and specifying hue-spacing across the full color wheel instead, which is collision-free for any count; and using the actual WCAG luminance formula for label text contrast rather than a naive lightness check, which gets pure yellow and pure blue — identical lightness, opposite correct answers — both right.",
+      },
+      {
+        label: 'Also',
+        items: [
+          'Over 500 lines of tests, covering the GeoJSON parser, the projection math, the color scheme’s guarantees, and the label-anchor edge cases.',
+        ],
+      },
+    ],
+  },
+  {
     title: 'Cabin crew calling console',
     icon: 'aircraft',
     tag: 'Aircraft cabin systems',

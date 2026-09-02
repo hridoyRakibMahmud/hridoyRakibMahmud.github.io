@@ -337,6 +337,17 @@ section{padding-block:clamp(3rem,7vw,5rem)}
 .ic-rec{fill:var(--rec);stroke:none;animation:ic-rec 2s ease-in-out infinite}
 @keyframes ic-rec{0%,100%{opacity:1}50%{opacity:.25}}
 
+/* --- drilldown: a region settling into focus, point marker pulsing --- */
+.ic-pin{
+  fill:var(--amber);stroke:none;
+  animation:ic-settle 3.6s ease-in-out infinite;
+}
+@keyframes ic-settle{
+  0%{opacity:0;transform:scale(.4)}
+  22%,70%{opacity:1;transform:scale(1)}
+  85%,100%{opacity:0;transform:scale(1.6)}
+}
+
 /* --- vitals: the trace being written across the monitor --- */
 .ic-trace{
   stroke:var(--jade);stroke-dasharray:22 100;
@@ -352,7 +363,7 @@ section{padding-block:clamp(3rem,7vw,5rem)}
   .case:hover .case__icon svg{transform:none}
   .case__icon svg *{animation:none !important}
   /* leave a readable still frame rather than a half-drawn one */
-  .ic-tick,.ic-wave,.ic-seat{opacity:1}
+  .ic-tick,.ic-wave,.ic-seat,.ic-pin{opacity:1}
   .ic-trace{stroke-dasharray:none}
   .ic-hop{transform:translate(37px,17px)}
 }
@@ -391,6 +402,12 @@ section{padding-block:clamp(3rem,7vw,5rem)}
   font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;
   text-transform:uppercase;color:var(--jade);display:block;margin-bottom:.2rem;
 }
+.case__repo{
+  display:inline-block;margin-top:1.1rem;
+  font-family:var(--mono);font-size:.78rem;color:var(--amber);
+  text-decoration:none;border-bottom:1px solid transparent;
+}
+.case__repo:hover{border-bottom-color:var(--amber)}
 .scope{
   font-size:.89rem;color:var(--muted);
   border-left:2px solid var(--edge);padding-left:.95rem;margin-top:1.15rem;
