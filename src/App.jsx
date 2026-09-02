@@ -1,6 +1,7 @@
 import Boot from './components/Boot.jsx';
 import ThemeToggle from './components/ThemeToggle.jsx';
 import StrengthIcon from './components/StrengthIcon.jsx';
+import ProjectSpinner from './components/ProjectSpinner.jsx';
 import ContactForm from './components/ContactForm.jsx';
 import CaseStudy from './components/CaseStudy.jsx';
 import useReveal from './components/useReveal.js';
@@ -47,6 +48,8 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      <ProjectSpinner />
 
       <hr className="rule" />
 

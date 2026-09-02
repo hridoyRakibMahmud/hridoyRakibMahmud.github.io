@@ -1,10 +1,10 @@
 import Icon from './Icon.jsx';
 
 export default function CaseStudy({ project }) {
-  const { title, tag, stack, blocks, scope, icon, repoUrl } = project;
+  const { id, title, tag, stack, blocks, scope, icon, repoUrl } = project;
 
   return (
-    <article className="case">
+    <article className="case" id={id}>
       <div className="case__meta">
         <Icon name={icon} />
         {tag && <span className="tag">{tag}</span>}

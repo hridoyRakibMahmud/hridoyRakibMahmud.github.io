@@ -184,6 +184,115 @@ h2{
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(3rem,7vw,5rem)}
+
+/* ---------- project spinner ---------- */
+.pspin{padding-block:0 clamp(1.8rem,4vw,2.6rem)}
+.pspin__stage{
+  position:relative;
+  height:clamp(210px,26vw,250px);
+  margin-top:1.6rem;
+  perspective:1400px;
+  perspective-origin:50% 50%;
+  overflow:hidden;
+}
+.pspin__ring{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  transform-style:preserve-3d;
+  /* Transparent, but without this it still occupies the z=0 plane and
+     silently shadows cards pushed behind it in 3D space from receiving
+     clicks. pointer-events re-enabled per-card below. */
+  pointer-events:none;
+}
+.pspin__item{
+  position:absolute;
+  width:11.5rem;
+  border:1px solid var(--edge);border-radius:11px;
+  background:linear-gradient(165deg,var(--card-a),var(--card-b));
+  box-shadow:0 1px 0 var(--card-inset) inset,0 30px 60px rgba(0,0,0,.35);
+  text-decoration:none;color:var(--text);
+  -webkit-user-drag:none;user-select:none;
+  transform-style:preserve-3d;
+  /* This transform only ever changes when the ring itself advances — never
+     on hover — so the card's hit-box can't drift out from under the cursor. */
+  transition:transform .75s cubic-bezier(.22,.61,.36,1),opacity .75s ease,box-shadow .3s ease,border-color .3s ease;
+  will-change:transform,opacity;
+}
+.pspin__item.is-front{
+  cursor:default;
+  box-shadow:0 1px 0 var(--card-inset) inset,0 34px 64px rgba(0,0,0,.45);
+  border-color:var(--edge-hover);
+}
+.pspin__item:not(.is-front){cursor:pointer}
+
+/* The part that actually tilts. Nested inside the stable outer card so its
+   rotation never changes the parent's hit-testing box — that separation is
+   what stops the tilt from tripping its own mouseleave. */
+.pspin__tilt{
+  display:flex;flex-direction:column;align-items:flex-start;
+  padding:1.15rem 1.1rem;
+  transform-style:preserve-3d;
+  transition:transform .12s ease-out;
+  will-change:transform;
+}
+.pspin__tilt .case__icon{margin-bottom:.8rem;pointer-events:none;transform:translateZ(18px)}
+.pspin__tilt .case__icon svg{width:36px;height:36px}
+.pspin__title{
+  font-family:var(--display);font-weight:700;font-size:.92rem;
+  line-height:1.25;letter-spacing:-.005em;margin-bottom:.35rem;
+  transform:translateZ(14px);
+}
+.pspin__tag{
+  font-family:var(--mono);font-size:.65rem;letter-spacing:.06em;
+  color:var(--muted);line-height:1.3;transform:translateZ(10px);
+}
+
+.pspin__dots{
+  display:flex;justify-content:center;gap:.5rem;margin-top:1.4rem;
+}
+.pspin__dot{
+  width:7px;height:7px;border-radius:50%;padding:0;
+  border:1px solid var(--edge);background:transparent;cursor:pointer;
+  transition:background .2s ease,transform .2s ease,border-color .2s ease;
+}
+.pspin__dot:hover{border-color:var(--edge-hover)}
+.pspin__dot.is-active{background:var(--amber);border-color:var(--amber);transform:scale(1.25)}
+
+@media(max-width:640px){
+  .pspin__stage{height:230px}
+  .pspin__item{width:9.5rem;padding:.95rem .9rem}
+}
+
+/* ---------- static fallback (reduced motion): flat scrollable strip ---------- */
+.pnav{padding-block:0 clamp(1.6rem,4vw,2.4rem)}
+.pnav__track{
+  display:flex;gap:.9rem;
+  overflow-x:auto;overflow-y:hidden;
+  padding:.4rem 0 .9rem;
+  margin-top:1.1rem;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+  mask-image:linear-gradient(90deg,transparent 0,#000 var(--pad),#000 calc(100% - var(--pad)),transparent 100%);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--pad),#000 calc(100% - var(--pad)),transparent 100%);
+}
+.pnav__track::-webkit-scrollbar{display:none}
+.pnav__pad{flex:none;width:calc(var(--pad) - .9rem)}
+.pnav__card{
+  flex:none;display:flex;flex-direction:column;align-items:flex-start;
+  width:9.5rem;padding:1rem .95rem;
+  border:1px solid var(--edge);border-radius:9px;
+  background:linear-gradient(165deg,var(--card-a),var(--card-b));
+  box-shadow:0 1px 0 var(--card-inset) inset,var(--card-shadow);
+  text-decoration:none;color:var(--text);
+}
+.pnav__card .case__icon{margin-bottom:.7rem}
+.pnav__card .case__icon svg{width:34px;height:34px}
+.pnav__title{
+  font-family:var(--display);font-weight:700;font-size:.86rem;
+  line-height:1.25;letter-spacing:-.005em;margin-bottom:.35rem;
+}
+.pnav__tag{font-family:var(--mono);font-size:.63rem;letter-spacing:.06em;color:var(--muted);line-height:1.3}
 .rule{border:0;border-top:1px solid var(--hairline);margin:0}
 
 .strengths{display:grid;gap:1.1rem;grid-template-columns:1fr}

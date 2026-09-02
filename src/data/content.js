@@ -55,6 +55,7 @@ export const strengths = [
 // or { label, text: '...' } for a paragraph.
 export const projects = [
   {
+    id: 'hr-attendance',
     title: 'Employee HR & attendance platform',
     icon: 'attendance',
     tag: 'Live on Google Play',
@@ -80,6 +81,7 @@ export const projects = [
     scope: "Built by a team of three. My scope was the attendance, leave and HR workflow modules — the calling, chat and location-tracking subsystems were my teammates'.",
   },
   {
+    id: 'geo-drilldown',
     title: 'Drill-down region map package',
     tag: 'Open source · Flutter package',
     repoUrl: 'https://github.com/hridoyRakibMahmud/geo_drilldown',
@@ -107,6 +109,7 @@ export const projects = [
     ],
   },
   {
+    id: 'cabin-console',
     title: 'Cabin crew calling console',
     icon: 'aircraft',
     tag: 'Aircraft cabin systems',
@@ -135,6 +138,7 @@ export const projects = [
     ],
   },
   {
+    id: 'voip-apps',
     title: 'VoIP calling apps',
     icon: 'voip',
     tag: 'Deployed on aircraft',
@@ -163,6 +167,7 @@ export const projects = [
     ],
   },
   {
+    id: 'virtual-number',
     title: 'Virtual second-number app',
     icon: 'globe',
     tag: 'Live on Google Play',
@@ -190,6 +195,7 @@ export const projects = [
     scope: "I built most of the app's API integrations and its major features, and took on the larger share of development after the product was rebranded.",
   },
   {
+    id: 'video-conferencing',
     title: 'Enterprise video conferencing platform',
     icon: 'conferencing',
     tag: 'Self-hosted infrastructure',
@@ -218,6 +224,7 @@ export const projects = [
     ],
   },
   {
+    id: 'telemedicine',
     title: 'Telemedicine consultation app',
     icon: 'vitals',
     tag: 'Internal product',
