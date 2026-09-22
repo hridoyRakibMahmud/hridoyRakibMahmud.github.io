@@ -464,6 +464,18 @@ section{padding-block:clamp(3rem,7vw,5rem)}
 }
 @keyframes ic-trace{from{stroke-dashoffset:22}to{stroke-dashoffset:-100}}
 
+/* --- chinhito: compass needle swinging, still finding its heading --- */
+.ic-needle{
+  fill:var(--amber);stroke:none;
+  transform-origin:24px 24px;
+  animation:ic-swing 4.4s cubic-bezier(.45,.05,.55,.95) infinite;
+}
+.ic-hub{fill:var(--jade);stroke:none}
+@keyframes ic-swing{
+  0%,100%{transform:rotate(-38deg)}
+  50%{transform:rotate(46deg)}
+}
+
 .case:hover .case__icon svg{transform:translateY(-3px)}
 .case__icon svg{transition:transform .25s cubic-bezier(.22,.61,.36,1)}
 
@@ -475,6 +487,7 @@ section{padding-block:clamp(3rem,7vw,5rem)}
   .ic-tick,.ic-wave,.ic-seat,.ic-pin{opacity:1}
   .ic-trace{stroke-dasharray:none}
   .ic-hop{transform:translate(37px,17px)}
+  .ic-needle{transform:rotate(0deg)}
 }
 
 .case__stack{

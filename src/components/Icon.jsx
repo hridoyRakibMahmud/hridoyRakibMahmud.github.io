@@ -71,6 +71,17 @@ const scenes = {
     </>
   ),
 
+  // A compass, needle swinging and settling on a bearing — an app still
+  // finding its heading, honestly (this one's not published yet).
+  chinhito: (
+    <>
+      <circle cx="24" cy="24" r="15" />
+      <path d="M24 6v4M24 38v4M6 24h4M38 24h4" opacity="0.4" />
+      <path className="ic-needle" d="M24 24L30 14L24 24L18 34Z" />
+      <circle className="ic-hub" cx="24" cy="24" r="2.2" />
+    </>
+  ),
+
   // A vitals trace being written across the monitor.
   vitals: (
     <>

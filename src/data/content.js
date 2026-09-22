@@ -104,9 +104,41 @@ export const projects = [
         label: 'Also',
         items: [
           'Over 500 lines of tests, covering the GeoJSON parser, the projection math, the color scheme’s guarantees, and the label-anchor edge cases.',
+          'Now consumed as a live dependency in Chinhito, a travel app built on top of it — see below.',
         ],
       },
     ],
+  },
+  {
+    id: 'chinhito',
+    title: 'Chinhito — travel discovery app',
+    tag: 'In development · Not yet published',
+    repoUrl: 'https://github.com/hridoyRakibMahmud/chinhito-flutter',
+    icon: 'chinhito',
+    stack: ['Flutter · Riverpod', 'Supabase (Postgres)', 'Google OAuth'],
+    blocks: [
+      {
+        label: 'Overview',
+        items: [
+          'A map-first destination explorer built on top of my own geo_drilldown package — browsing is login-optional, and the drill-down map runs against live Supabase/Postgres data rather than placeholder pins.',
+          'Signing in with Google unlocks the account-gated features: marking places as visited, which fills in progress on the map, and a social feed for sharing the experience.',
+        ],
+      },
+      {
+        label: 'Built with AI-assisted development',
+        text: 'Same approach as geo_drilldown: I directed an AI coding tool through the implementation and reviewed and tested throughout rather than writing every line myself.',
+      },
+      {
+        label: 'What’s built so far',
+        items: [
+          'The drill-down map explore screen, wired to live data.',
+          'Visited-place tracking, tied back to map progress.',
+          'A social feed — posting and likes.',
+          'A profile/stats screen and Google OAuth sign-in.',
+        ],
+      },
+    ],
+    scope: 'Still in development and not yet published. Listed here as active, honestly-scoped work in progress rather than a finished product.',
   },
   {
     id: 'cabin-console',
