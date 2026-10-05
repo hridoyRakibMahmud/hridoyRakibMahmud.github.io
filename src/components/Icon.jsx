@@ -82,6 +82,17 @@ const scenes = {
     </>
   ),
 
+  // The sun sinking below the horizon and a crescent rising — the day rolling
+  // over at Maghrib rather than at midnight.
+  maghrib: (
+    <>
+      <circle className="ic-sun" cx="21" cy="26" r="6" />
+      <path d="M5 33h38" />
+      <path d="M12 38h24M18 42.5h12" opacity="0.45" />
+      <path className="ic-moon" d="M36 6a7 7 0 1 0 6 10.5a6.5 6.5 0 0 1-6-10.5Z" />
+    </>
+  ),
+
   // A vitals trace being written across the monitor.
   vitals: (
     <>

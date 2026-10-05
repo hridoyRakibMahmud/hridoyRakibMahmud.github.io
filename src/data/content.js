@@ -141,6 +141,43 @@ export const projects = [
     scope: 'Still in development and not yet published. Listed here as active, honestly-scoped work in progress rather than a finished product.',
   },
   {
+    id: 'amal-tracker',
+    title: 'Amal & Dhikir Tracker — worship tracking app',
+    tag: 'In development · Not yet published',
+    repoUrl: 'https://github.com/hridoyRakibMahmud/amal-dhikir-tracker-android',
+    icon: 'maghrib',
+    stack: ['Kotlin · Jetpack Compose', 'Room · DataStore', 'Firebase Auth & Firestore', 'Credential Manager'],
+    blocks: [
+      {
+        label: 'Overview',
+        items: [
+          'A native Android app for tracking daily Salah, Dhikir and Nafl fasting, built around the Islamic day — which begins at Maghrib, sunset, rather than at midnight.',
+          'Offline-first: every action is written to Room on the device first, so the app works fully without a connection. Signing in with Google turns on sync, and the same history appears on another phone.',
+          'Kotlin and Jetpack Compose with Material 3, MVVM over StateFlow, and Compose Navigation.',
+        ],
+      },
+      {
+        label: 'Hardest part',
+        text: "Deciding what ‘today’ means. A day that ends at sunset depends on where the user is standing, so the app computes sunset from their last known location and rolls the day over at that moment — including while the app is open on screen, by sleeping until the next sunset and recomputing whenever it returns to the foreground. The Hijri date uses the Umm al-Qura calculation built into Android, with a manual offset of a day or two, because a region's local moon-sighting can differ from it.",
+      },
+      {
+        label: 'Built with AI-assisted development',
+        text: 'I wrote the product spec — offline-first, with the day boundary at Maghrib rather than midnight — then directed an AI coding tool through the implementation, reviewing and testing throughout rather than writing every line myself.',
+      },
+      {
+        label: 'What’s built so far',
+        items: [
+          'Salah tracking: the five Fard prayers with Sunnah marked separately, user-added Nafl prayers, and a streak for days with every Fard prayer done.',
+          'Dhikir counting with haptic feedback, manual entry for counts done away from the phone, and optional daily targets.',
+          'A Hijri-month fasting calendar that highlights the Sunnah fasts, treats Ramadan as obligatory with a missed and remaining summary, and refuses to log a fast on the days fasting is forbidden.',
+          'Firestore sync, last write wins, behind security rules that confine each user to their own data — with default entries given fixed ids so they don’t duplicate when a second device signs in.',
+          '7- and 30-day history charts.',
+        ],
+      },
+    ],
+    scope: 'A solo project, still in development and not yet published.',
+  },
+  {
     id: 'cabin-console',
     title: 'Cabin crew calling console',
     icon: 'aircraft',

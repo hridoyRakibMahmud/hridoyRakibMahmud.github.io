@@ -476,6 +476,24 @@ section{padding-block:clamp(3rem,7vw,5rem)}
   50%{transform:rotate(46deg)}
 }
 
+/* --- amal tracker: sun sinks into the horizon, then the crescent appears.
+   The sun squashes from its bottom edge rather than moving below the line,
+   so no clipPath (and no per-instance id) is needed. --- */
+.ic-sun{transform-origin:bottom center;animation:ic-set 5.2s ease-in-out infinite}
+.ic-moon{fill:var(--jade);stroke:none;opacity:0;animation:ic-rise 5.2s ease-in-out infinite}
+@keyframes ic-set{
+  0%,10%{opacity:1;transform:translateY(-5px) scaleY(1)}
+  32%{opacity:1;transform:translateY(0) scaleY(1)}
+  46%{opacity:0;transform:translateY(0) scaleY(0)}
+  86%{opacity:0;transform:translateY(-5px) scaleY(1)}
+  100%{opacity:1;transform:translateY(-5px) scaleY(1)}
+}
+@keyframes ic-rise{
+  0%,42%{opacity:0;transform:translateY(3px)}
+  58%,82%{opacity:1;transform:translateY(0)}
+  96%,100%{opacity:0;transform:translateY(0)}
+}
+
 .case:hover .case__icon svg{transform:translateY(-3px)}
 .case__icon svg{transition:transform .25s cubic-bezier(.22,.61,.36,1)}
 
@@ -484,7 +502,7 @@ section{padding-block:clamp(3rem,7vw,5rem)}
   .case:hover .case__icon svg{transform:none}
   .case__icon svg *{animation:none !important}
   /* leave a readable still frame rather than a half-drawn one */
-  .ic-tick,.ic-wave,.ic-seat,.ic-pin{opacity:1}
+  .ic-tick,.ic-wave,.ic-seat,.ic-pin,.ic-moon{opacity:1}
   .ic-trace{stroke-dasharray:none}
   .ic-hop{transform:translate(37px,17px)}
   .ic-needle{transform:rotate(0deg)}
